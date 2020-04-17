@@ -14,6 +14,17 @@ public class EmployeeDB implements Employee {
         this.email = email;
     }
 
+    // without this output will only be item list address
+    @Override
+    public String toString() {
+        return "EmployeeDB{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

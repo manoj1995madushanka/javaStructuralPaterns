@@ -10,7 +10,13 @@ public class EmployeeClient {
         employees.add(employeeFromDb);
 
         // will not work this is why adaptor comes into play
-        Employee employeeFromLdap = new EmployeeLdap("456","madushanka","last","pqr@gmil.com");
+        //Employee employeeFromLdap = new EmployeeLdap("456","madushanka","last","pqr@gmil.com");
+
+        EmployeeLdap employeeFromLdap = new EmployeeLdap("456","madushanka","last","pqr@gmil.com");
+        // below line is error so we create EmployeeAdaptorLdap
+        //employees.add(employeeFromLdap);
+
+        employees.add(new EmployeeAdapterLdap(employeeFromLdap));
 
         return employees;
     }
