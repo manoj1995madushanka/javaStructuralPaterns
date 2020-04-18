@@ -15,8 +15,12 @@ public class EmployeeClient {
         EmployeeLdap employeeFromLdap = new EmployeeLdap("456","madushanka","last","pqr@gmil.com");
         // below line is error so we create EmployeeAdaptorLdap
         //employees.add(employeeFromLdap);
-
         employees.add(new EmployeeAdapterLdap(employeeFromLdap));
+
+        EmployeeCSV employeeCSV = new EmployeeCSV("2435,manoj,madushanka,hsgdg@gmaul.com");
+        // for print object data add tostring to adapter
+        employees.add(new EmployeeAdapterCSV(employeeCSV));
+
 
         return employees;
     }
